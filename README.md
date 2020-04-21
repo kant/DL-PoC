@@ -51,7 +51,7 @@ pip3 install pennylane-sf
 
 Let us consider the following discrete two-train scenario:
 
-![track](https://github.com/jgalfaro/DP-PoC/blob/master/figures/two_train.png)
+![figure](https://raw.githubusercontent.com/jgalfaro/DL-PoC/master/figures/two_train.png)
 
 Tracks are broken into sections. Let us assume a scenario where Train 1 is the victim and Train 2 is the adversary. In the Reinforcement Learning terminology, Train 1 is is the agent.
 Tracks and Train 2 constitute the environment. There is an outer loop, together with a bypass from point 2 to point 6. Traversal time is uniform across sections. The normal trajectory of Train~1 is the outer loop, while maintaining a distance greated than one empty section with Train 2. When a train crosses point zero,
