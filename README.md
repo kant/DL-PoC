@@ -51,7 +51,7 @@ pip3 install pennylane-sf
 
 Let us consider the following discrete two-train scenario:
 
-![track](https://github.com/jgalfaro/sandbox/blob/master/figures/two_train.png)
+![track](https://github.com/jgalfaro/DP-PoC/blob/master/figures/two_train.png)
 
 Tracks are broken into sections. Let us assume a scenario where Train 1 is the victim and Train 2 is the adversary. In the Reinforcement Learning terminology, Train 1 is is the agent.
 Tracks and Train 2 constitute the environment. There is an outer loop, together with a bypass from point 2 to point 6. Traversal time is uniform across sections. The normal trajectory of Train~1 is the outer loop, while maintaining a distance greated than one empty section with Train 2. When a train crosses point zero,
@@ -61,7 +61,7 @@ In the terms of Reinforcement Learning, both trains have two available actions: 
 
 The representation of the environment is as follows:
 
-![track](https://github.com/jgalfaro/sandbox/blob/master/figures/MDP_two_trains.png)
+![track](https://github.com/jgalfaro/DP-PoC/blob/master/figures/MDP_two_trains.png)
 
 In the initial state $S_0$ with a one-section separation distance,  the agent selects an action to perform: take loop or take bypass.   Train 1 performs the selected action. When selecting take loop, with probability $p$ the environment goes back to state $S_0$ (no reward) or with probability $1-p$ it moves to state $S_1$,
 with a five-section separation distance (reward is four). When selecting take bypass, with probability $q$ the environment goes back to state $S_0$ (no reward) or with probability $1-q$ it moves state $S_2$, with a three-section separation distance (reward is two). The agent memorizes how good it has been to perform the selected action.
@@ -192,9 +192,9 @@ plt.legend()
 plt.show()
 ```
 
-<kbd>[![Figure 1.](https://github.com/jgalfaro/sandbox/blob/master/figures/output_14_0.png?raw=true)]</kbd>
+<kbd>[![Figure 1.](https://github.com/jgalfaro/DP-PoC/blob/master/figures/output_14_0.png?raw=true)]</kbd>
 #### Figure 1. Evolution of DL probabilities, after some iterations, the victim will favor the take loop action, given that it gets a higher probability with respect to the take bypass action
 
-<kbd>[![Figure 2.](https://github.com/jgalfaro/sandbox/blob/master/figures/attack.gif?raw=true)](https://youtu.be/__w6aChvyLs)[![Figure 1.](https://github.com/jgalfaro/sandbox/blob/master/figures/attack0.gif?raw=true)](https://youtu.be/__w6aChvyLs)</kbd>
+<kbd>[![Figure 2.](https://github.com/jgalfaro/DP-PoC/blob/master/figures/attack.gif?raw=true)](https://youtu.be/__w6aChvyLs)[![Figure 1.](https://github.com/jgalfaro/DP-PoC/blob/master/figures/attack0.gif?raw=true)](https://youtu.be/__w6aChvyLs)</kbd>
 #### Figure 2. Graphical simulations, in which the red train is under adversarial control, seeking to perpetrate a collision with the blue train
 
