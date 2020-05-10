@@ -195,6 +195,8 @@ plt.show()
 <kbd>[![Figure 1.](https://raw.githubusercontent.com/jgalfaro/DL-PoC/master/figures/output_14_0.png?raw=true)]</kbd>
 #### Figure 1. Evolution of DL probabilities, after some iterations, the victim will favor the take loop action, given that it gets a higher probability with respect to the take bypass action
 
-<kbd>[![Figure 2.](https://raw.githubusercontent.com/jgalfaro/DL-PoC/master/figures/attack.gif?raw=true)](https://youtu.be/__w6aChvyLs)[![Figure 1.](https://raw.githubusercontent.com/jgalfaro/DL-PoC/master/figures/attack0.gif?raw=true)](https://youtu.be/__w6aChvyLs)</kbd>
+<kbd>[![Figure 2.](https://raw.githubusercontent.com/jgalfaro/DL-PoC/master/figures/attack.gif?raw=true)](https://youtu.be/__w6aChvyLs)[![Figure 2.](https://raw.githubusercontent.com/jgalfaro/DL-PoC/master/figures/attack0.gif?raw=true)](https://youtu.be/__w6aChvyLs)</kbd>
 #### Figure 2. Graphical simulations, in which the red train is under adversarial control, seeking to perpetrate a collision with the blue train
 
+<kbd>[![Figure 3.](https://raw.githubusercontent.com/jgalfaro/DL-PoC/master/figures/NewApplet.gif?raw=true)](https://youtu.be/SO2qjWpXH5Q)[![Figure 3.](https://raw.githubusercontent.com/jgalfaro/DL-PoC/master/figures/NewApplet.gif?raw=true)](https://youtu.be/SO2qjWpXH5Q)</kbd>
+#### Figure 2. Updated simulation, in which the red and blue trains can either take the main Loop, or the bypass
