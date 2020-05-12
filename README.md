@@ -86,7 +86,7 @@ dev1 = qml.device("default.qubit", wires=1, shots=1)
 
 ## Quantum node construction
 
-A variational circuit `W(theta)` is trained, with parameter `theta`. The circuit consists of two gates: an `X` gate and an `Y` gate. In this example, there is only state S<sub>0</sub>. It is represented by the quantum state  <imgsrc="https://latex.codecogs.com/gif.latex?$\vert%200%20\rangle$"/> (&brvbar;0&rang;, pronounced ket 0). Because it is a ground state, the state is not coded explicitly at the input of the circuit. Parameter `theta` is an array of two rotation angles, one for every gate.
+A variational circuit `W(theta)` is trained, with parameter `theta`. The circuit consists of two gates: an `X` gate and an `Y` gate. In this example, there is only state S<sub>0</sub>. It is represented by the quantum state  <img src="https://latex.codecogs.com/gif.latex?$\vert%200%20\rangle$"/> (&brvbar;0&rang;, pronounced ket 0). Because it is a ground state, the state is not coded explicitly at the input of the circuit. Parameter `theta` is an array of two rotation angles, one for every gate.
 
 
 ```python
