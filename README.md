@@ -63,7 +63,7 @@ The representation of the environment is as follows:
 
 ![track](https://raw.githubusercontent.com/jgalfaro/DL-PoC/master/figures/MDP_two_trains.png)
 
-In the initial state `S<sub>0</sub>` with a one-section separation distance,  the agent selects an action to perform: take loop or take bypass.   Train 1 performs the selected action. When selecting take loop, with probability `$p$` the environment goes back to state `$S_0$` (no reward) or with probability `$1-p$` it moves to state `$S_1$`,
+In the initial state S<sub>0</sub> with a one-section separation distance,  the agent selects an action to perform: take loop or take bypass.   Train 1 performs the selected action. When selecting take loop, with probability `$p$` the environment goes back to state `$S_0$` (no reward) or with probability `$1-p$` it moves to state `$S_1$`,
 with a five-section separation distance (reward is four). When selecting take bypass, with probability `$q$` the environment goes back to state `$S_0$` (no reward) or with probability `$1-q$` it moves state `$S_2$`, with a three-section separation distance (reward is two). The agent memorizes how good it has been to perform the selected action.
 
 In the sequel, the environment probabilities of zero reward `$p$` and `$q$` are assumed to be the same.
