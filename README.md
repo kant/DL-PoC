@@ -146,7 +146,7 @@ def update(theta, p):
 
 Q Learning Reinforcement Learning is used.
 
-Probabilities of quantum states $\vert 0 \rangle$ and $\vert 1 \rangle$ is proportional to the respective rewards `Q[0]/(Q[0]+Q[1])` and `1 - Q[0]/(Q[0]+Q[1])`.
+Probabilities of quantum states `$\vert 0 \rangle$` and `$\vert 1 \rangle$` is proportional to the respective rewards `Q[0]/(Q[0]+Q[1])` and `1 - Q[0]/(Q[0]+Q[1])`.
 
 
 ```python
