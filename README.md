@@ -86,7 +86,7 @@ dev1 = qml.device("default.qubit", wires=1, shots=1)
 
 ## Quantum node construction
 
-A variational circuit `W(theta)` is trained, with parameter `theta`. The circuit consists of two gates: an `X` gate and an `Y` gate. In this example, there is only state S<sub>0</sub>. It is represented by the quantum state  <img src="https://latex.codecogs.com/gif.latex?$\vert%200%20\rangle$"/> (pronounced ket 0). Because it is a ground state, the state is not coded explicitly at the input of the circuit. Parameter `theta` is an array of two rotation angles, one for every gate.
+A variational circuit `W(theta)` is trained, with parameter `theta`. The circuit consists of two gates: an `X` gate and an `Y` gate. In this example, there is only state S<sub>0</sub>. It is represented by the quantum state  <img src="https://latex.codecogs.com/gif.latex?$\vert%200%20\rangle$"/> (pronounced `ket 0`). Because it is a ground state, the state is not coded explicitly at the input of the circuit. Parameter `theta` is an array of two rotation angles, one for every gate.
 
 
 ```python
@@ -100,9 +100,9 @@ def W(theta):
 
 ## Cost model
 
-The actions take loop and take bypass are respectively represented by the quantum states <img src="https://latex.codecogs.com/gif.latex?$\vert%200%20\rangle$"/> and <img src="https://latex.codecogs.com/gif.latex?\vert%201%20\rangle"/>. The variational circuit is trained on the probability of each computational basis state: <img src="https://latex.codecogs.com/gif.latex?$\vert%200%20\rangle$"/> and <img src="https://latex.codecogs.com/gif.latex?\vert%201%20\rangle"/>.
+The actions take loop and take bypass are respectively represented by the quantum states <img src="https://latex.codecogs.com/gif.latex?$\vert%200%20\rangle$"/> and <img src="https://latex.codecogs.com/gif.latex?\vert%201%20\rangle"/> (pronounced `ket 1`). The variational circuit is trained on the probability of each computational basis state: `ket 0`  and `ket 1`.
 
-The `cost` function measures the difference between the probablities associated to the variational circuit `W(theta)` and the target probabilities of the quantum states <img src="https://latex.codecogs.com/gif.latex?$\vert%200%20\rangle$"/> and <img src="https://latex.codecogs.com/gif.latex?\vert%201%20\rangle"/>.
+The `cost` function measures the difference between the probablities associated to the variational circuit `W(theta)` and the target probabilities of the quantum states `ket 0`  and `ket 1`.
 
 
 ```python
@@ -119,7 +119,7 @@ def cost(theta, p):
 
 ##  Quantum circuit update
 
-Using optimization, the following code finds the `theta` such that the variational circuit `W(theta)` outputs a quantum state where the probabilities `$\vert 0 \rangle$` and `$\vert 1 \rangle$` are respectively `$p$` and `$1-p$`.
+Using optimization, the following code finds the `theta` such that the variational circuit `W(theta)` outputs a quantum state where the probabilities `ket 0`  and `ket 1` are, respectively, `p` and `1-p`.
 
 
 ```python
@@ -146,7 +146,7 @@ def update(theta, p):
 
 Q Learning Reinforcement Learning is used.
 
-Probabilities of quantum states `$\vert 0 \rangle$` and `$\vert 1 \rangle$` is proportional to the respective rewards `Q[0]/(Q[0]+Q[1])` and `1 - Q[0]/(Q[0]+Q[1])`.
+Probabilities of quantum states `ket 0`  and `ket 1` are proportional to the respective rewards `Q[0]/(Q[0]+Q[1])` and `1 - Q[0]/(Q[0]+Q[1])`.
 
 
 ```python
