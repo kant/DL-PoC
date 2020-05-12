@@ -102,7 +102,7 @@ def W(theta):
 
 The actions take loop and take bypass are respectively represented by the quantum states <img src="https://latex.codecogs.com/gif.latex?$\vert%200%20\rangle$"/> and <img src="https://latex.codecogs.com/gif.latex?\vert%201%20\rangle"/>. The variational circuit is trained on the probability of each computational basis state: <img src="https://latex.codecogs.com/gif.latex?$\vert%200%20\rangle$"/> and <img src="https://latex.codecogs.com/gif.latex?\vert%201%20\rangle"/>.
 
-The `cost` function measures the difference between the probablities associated to the variational circuit `W(theta)` and the target probabilities of the quantum states `$\vert 0 \rangle$` and `$\vert 1 \rangle$`.
+The `cost` function measures the difference between the probablities associated to the variational circuit `W(theta)` and the target probabilities of the quantum states <img src="https://latex.codecogs.com/gif.latex?$\vert%200%20\rangle$"/> and <img src="https://latex.codecogs.com/gif.latex?\vert%201%20\rangle"/>.
 
 
 ```python
