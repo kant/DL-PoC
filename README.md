@@ -57,16 +57,16 @@ Tracks are broken into sections. Let us assume a scenario where Train 1 is the v
 Tracks and Train 2 constitute the environment. There is an outer loop, together with a bypass from point 2 to point 6. Traversal time is uniform across sections. The normal trajectory of Train~1 is the outer loop, while maintaining a distance greated than one empty section with Train 2. When a train crosses point zero,
 it has to take a decision: either traversing the outer loop or take the bypass. Both trains can take any path and take their decision independently, when they are at point zero. In this scenario, Train 1, the agent starts at point zero. Train 2 starts at point 7.
 
-In the terms of Reinforcement Learning, both trains have two available actions: take loop and take bypass. The agent gets $k$ reward points for a relative distance increase of $k$ sections with Train 2. It gets $-k$ reward points for a relative distance decrease of $k$ sections with Train 2. For example, if both trains take the loop or if both trains decide to take the bypass, the agent gets no rewards. When Train~1 decides to take the bypass and Train 2 decides to take the loop, the agent gets two reward points, at return to point zero (Train 2 is at point five). When Train 1 decides to take the loop and Train 2 decides to take the bypass, the agent gets four reward points, at return to point zero (Train 2 is at point one).
+In the terms of Reinforcement Learning, both trains have two available actions: take loop and take bypass. The agent gets `$k$` reward points for a relative distance increase of `$k$` sections with Train 2. It gets `$-k$` reward points for a relative distance decrease of `$k$` sections with Train 2. For example, if both trains take the loop or if both trains decide to take the bypass, the agent gets no rewards. When Train~1 decides to take the bypass and Train 2 decides to take the loop, the agent gets two reward points, at return to point zero (Train 2 is at point five). When Train 1 decides to take the loop and Train 2 decides to take the bypass, the agent gets four reward points, at return to point zero (Train 2 is at point one).
 
 The representation of the environment is as follows:
 
 ![track](https://raw.githubusercontent.com/jgalfaro/DL-PoC/master/figures/MDP_two_trains.png)
 
-In the initial state $S_0$ with a one-section separation distance,  the agent selects an action to perform: take loop or take bypass.   Train 1 performs the selected action. When selecting take loop, with probability $p$ the environment goes back to state $S_0$ (no reward) or with probability $1-p$ it moves to state $S_1$,
-with a five-section separation distance (reward is four). When selecting take bypass, with probability $q$ the environment goes back to state $S_0$ (no reward) or with probability $1-q$ it moves state $S_2$, with a three-section separation distance (reward is two). The agent memorizes how good it has been to perform the selected action.
+In the initial state `$S_0$` with a one-section separation distance,  the agent selects an action to perform: take loop or take bypass.   Train 1 performs the selected action. When selecting take loop, with probability `$p$` the environment goes back to state `$S_0$` (no reward) or with probability `$1-p$` it moves to state `$S_1$`,
+with a five-section separation distance (reward is four). When selecting take bypass, with probability `$q$` the environment goes back to state `$S_0$` (no reward) or with probability `$1-q$` it moves state `$S_2$`, with a three-section separation distance (reward is two). The agent memorizes how good it has been to perform the selected action.
 
-In the sequel, the environment probabilities of zero reward $p$ and $q$ are assumed to be the same.
+In the sequel, the environment probabilities of zero reward `$p$` and `$q$` are assumed to be the same.
 
 ##  PennyLan environment import
 
@@ -86,7 +86,7 @@ dev1 = qml.device("default.qubit", wires=1, shots=1)
 
 ## Quantum node construction
 
-A variational circuit `W(theta)` is trained, with parameter `theta`. The circuit consists of two gates: an $X$ gate and an $Y$ gate. In this example, there is only state $S_0$. It is represented by the quantum state $\vert 0 \rangle$. Because it is a ground state, the state is not coded explicitly at the input of the circuit. Parameter `theta` is an array of two rotation angles, one for every gate.
+A variational circuit `W(theta)` is trained, with parameter `theta`. The circuit consists of two gates: an `$X$` gate and an `$Y$` gate. In this example, there is only state `$S_0$`. It is represented by the quantum state `$\vert 0 \rangle$`. Because it is a ground state, the state is not coded explicitly at the input of the circuit. Parameter `theta` is an array of two rotation angles, one for every gate.
 
 
 ```python
@@ -100,9 +100,9 @@ def W(theta):
 
 ## Cost model
 
-The actions take loop and take bypass are respectively represented by the quantum states $\vert 0 \rangle$ and $\vert 1 \rangle$. The variational circuit is trained on the probability of each computational basis state: $\vert 0 \rangle$ and $\vert 1 \rangle$.
+The actions take loop and take bypass are respectively represented by the quantum states `$\vert 0 \rangle$` and `$\vert 1 \rangle$`. The variational circuit is trained on the probability of each computational basis state: `$\vert 0 \rangle$` and `$\vert 1 \rangle$`.
 
-The `cost` function measures the difference between the probablities associated to the variational circuit `W(theta)` and the target probabilities of the quantum states $\vert 0 \rangle$ and $\vert 1 \rangle$.
+The `cost` function measures the difference between the probablities associated to the variational circuit `W(theta)` and the target probabilities of the quantum states `$\vert 0 \rangle$` and `$\vert 1 \rangle$`.
 
 
 ```python
@@ -119,7 +119,7 @@ def cost(theta, p):
 
 ##  Quantum circuit update
 
-Using optimization, the following code finds the `theta` such that the variational circuit `W(theta)` outputs a quantum state where the probabilities $\vert 0 \rangle$ and $\vert 1 \rangle$ are respectively $p$ and $1-p$.
+Using optimization, the following code finds the `theta` such that the variational circuit `W(theta)` outputs a quantum state where the probabilities `$\vert 0 \rangle$` and `$\vert 1 \rangle$` are respectively `$p$` and `$1-p$`.
 
 
 ```python
