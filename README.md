@@ -68,7 +68,7 @@ with a five-section separation distance (reward is four). When selecting take by
 
 In the sequel, the environment probabilities of zero reward `p` and `q` are assumed to be the same.
 
-##  PennyLan environment import
+##  PennyLane environment import
 
 
 ```python
